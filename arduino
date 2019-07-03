@@ -1,0 +1,170 @@
+boolean isPlaying;
+PImage img;
+
+void moveservos(float state) {
+
+  if (state ==0) return;
+
+  if ((state>0)&&(state<160000)) {
+
+    //println("number of people = 0");
+
+    //a1++;
+
+    arduino.servoWrite(servoPin[0], 3);
+
+    arduino.servoWrite(servoPin[1], 10);
+
+    arduino.servoWrite(servoPin[2], 3);
+
+    arduino.servoWrite(servoPin[3], 0);
+
+    arduino.servoWrite(servoPin[4], 0);
+
+    arduino.servoWrite(servoPin[5], 2);
+
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "default.mov");
+    movie.play();
+    isPlaying=true;
+  } else if ((state>160000)&&(state<280000)) {
+
+    //println("number of people = 1");
+
+    arduino.servoWrite(servoPin[0], 93);
+
+    arduino.servoWrite(servoPin[1], 100);
+
+    arduino.servoWrite(servoPin[2], 93);
+
+    arduino.servoWrite(servoPin[3], 90);
+
+    arduino.servoWrite(servoPin[4], 90);
+
+    arduino.servoWrite(servoPin[5], 92);
+
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "Comp 4_5.mov");
+    movie.volume(100);
+    movie.play();
+    movie.loop();
+    isPlaying=true;
+    
+    //file = new SoundFile(this, "sound.mp3);
+    //file.play();
+    
+  } else if ((state>280000)&&(state<500000)) {
+
+    //println("number of people = 2");
+
+    arduino.servoWrite(servoPin[0], 3);
+
+    arduino.servoWrite(servoPin[1], 100);
+
+    arduino.servoWrite(servoPin[2], 93);
+
+    arduino.servoWrite(servoPin[3], 90);
+
+    arduino.servoWrite(servoPin[4], 90);
+
+    arduino.servoWrite(servoPin[5], 92);
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "default.mov");
+    movie.play();
+    isPlaying=true;
+  } else if ((state>500000)&&(state<700000)) {
+
+    //println("number of people = 3");
+
+    arduino.servoWrite(servoPin[0], 3);
+
+    arduino.servoWrite(servoPin[1], 10);
+
+    arduino.servoWrite(servoPin[2], 93);
+
+    arduino.servoWrite(servoPin[3], 90);
+
+    arduino.servoWrite(servoPin[4], 90);
+
+    arduino.servoWrite(servoPin[5], 92);
+    
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "default.mov");
+    movie.play();
+    isPlaying=true;
+  } else if ((state>700000)&&(state<900000)) {
+
+    println("number of people = 4");
+
+    arduino.servoWrite(servoPin[0], 0);
+
+    arduino.servoWrite(servoPin[1], 0);
+
+    arduino.servoWrite(servoPin[2], 0);
+
+    arduino.servoWrite(servoPin[3], 90);
+
+    arduino.servoWrite(servoPin[4], 90);
+
+    arduino.servoWrite(servoPin[5], 92);
+    
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "default.mov");
+    movie.play();
+    isPlaying=true;
+  } else if ((state>900000)&&(state<1100000)) {
+
+    //println("number of people = 5");
+
+    arduino.servoWrite(servoPin[0], 3);
+
+    arduino.servoWrite(servoPin[1], 10);
+
+    arduino.servoWrite(servoPin[2], 3);
+
+    arduino.servoWrite(servoPin[3], 0);
+
+    arduino.servoWrite(servoPin[4], 90);
+
+    arduino.servoWrite(servoPin[5], 92);
+    
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "default.mov");
+    movie.play();
+    isPlaying=true;
+  } else if ((state>1100000)) {
+
+    //println("number of people = 6");
+
+    arduino.servoWrite(servoPin[0], 3);
+
+    arduino.servoWrite(servoPin[1], 10);
+
+    arduino.servoWrite(servoPin[2], 3);
+
+    arduino.servoWrite(servoPin[3], 0);
+
+    arduino.servoWrite(servoPin[4], 0);
+
+    arduino.servoWrite(servoPin[5], 92);
+    
+    if (isPlaying ) {
+      movie.stop();
+    }
+    movie = new Movie(this, "default.mov");
+    movie.play();
+    isPlaying=true;
+  }
+}
